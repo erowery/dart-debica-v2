@@ -1,12 +1,14 @@
 'use client';
 
-import { IconHome, IconTrophy, IconStopwatch, IconUser } from '@/components/icons';
+import { IconHome, IconTrophy, IconTarget, IconStopwatch, IconUser } from '@/components/icons';
 
-export type ViewId = 'start' | 'liga' | 'trening' | 'profil';
+export type ViewId = 'start' | 'liga' | 'moje' | 'live' | 'trening' | 'profil';
 
 const ITEMS: { id: ViewId; label: string; Icon: any }[] = [
   { id: 'start', label: 'Start', Icon: IconHome },
   { id: 'liga', label: 'Liga', Icon: IconTrophy },
+  { id: 'moje', label: 'Moje mecze', Icon: IconTarget },
+  { id: 'live', label: 'Live', Icon: IconStopwatch },
   { id: 'trening', label: 'Trening', Icon: IconStopwatch },
   { id: 'profil', label: 'Profil', Icon: IconUser },
 ];
@@ -22,7 +24,7 @@ export default function BottomNav({
 }) {
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-20 bg-ink-900/95 backdrop-blur-md border-t border-ink-700/60">
-      <div className="max-w-4xl mx-auto grid grid-cols-4">
+      <div className="max-w-4xl mx-auto grid grid-cols-6">
         {ITEMS.map((item) => {
           const activeItem = active === item.id;
           return (
