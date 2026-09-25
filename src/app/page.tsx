@@ -265,7 +265,6 @@ export default function HomePage() {
             />
           )}
 
-        
           {view === 'live' && <LiveView matches={allLiveMatches} myTpid={whoami.tpid} />}
 
           {view === 'trening' && <TreningHub myTpid={whoami.tpid} average={myStats?.average ?? null} />}
